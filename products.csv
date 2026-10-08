@@ -1,0 +1,6 @@
+id,name,price,quantity,total
+1,Product 1,25.0,100,2500.0
+2,Product 2,50.0,70,3500.0
+3,Product 3,75.0,180,13500.0
+4,Product 4,100.0,30,3000.0
+5,Product 5,125.0,90,11250.0
