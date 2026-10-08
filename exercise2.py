@@ -18,7 +18,7 @@ def create_dataframe():
 def main():
 # 1. Tạo DataFrame
     df = create_dataframe()
-# 2. Lưu ra products.csv (index=False: không ghi cột chỉ số 0,1,2...)
+# 2. Lưu ra products.csv
     df.to_csv(CSV_FILE, index=False)
     print(f"Saved data to {CSV_FILE}")
 # 3. Đọc lại file CSV vào DataFrame mới
@@ -30,11 +30,11 @@ def main():
     print("\n===== PRODUCTS WITH PRICE > 100 =====")
     expensive = products[products["price"] > 100]
     print(expensive.to_string(index=False))
-# 6. Tính tổng giá trị tồn kho = tổng (price * quantity) của mọi sản phẩm
+# 6. Tính tổng giá trị tồn kho của mọi sản phẩm
     total_value = (products["price"] * products["quantity"]).sum()
     print("\n===== TOTAL INVENTORY VALUE =====")
     print(f"Total inventory value: {total_value:.2f}")
-# 7. Thêm cột mới total = price * quantity
+# 7. Thêm cột mới total 
     products["total"] = products["price"] * products["quantity"]
     print("\n===== PRODUCTS WITH NEW COLUMN 'total' =====")
     print(products.to_string(index=False))
